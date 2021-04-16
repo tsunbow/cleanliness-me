@@ -1,6 +1,12 @@
-<div class='main'>
+<%# Header %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("logo.png", class:"furima-icon"), "/" %>
+    <li><%= link_to 'ログイン', root_path, class: "login" %></li>
+  </div>
+</header>
 
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+<%# Top %>
   <div class='title-contents'>
     <h2 class='service-title'>
       クレンリネンス共有タスクアプリ
@@ -10,9 +16,8 @@
     </p>
     <li><%= link_to '新規登録して始める', root_path, class: "btn btn-primary" %></li>
   </div>
-  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
 
-  <%# FURIMAが選ばれる3つの理由部分 %>
+<%# 詳細 %>
   <div class='select-reason-contents'>
     <h2 class='title'>
       Cleanliness_meの特徴
@@ -50,8 +55,8 @@
       </li>
     </ul>
   </div>
-  <%# /FURIMAが選ばれる3つの理由部分 %>
-
 
 <%# Footer %>
-<%= render "shared/footer" %>
+<div class='footer'>
+<p>© Cleanliness_me</p>
+</div>
