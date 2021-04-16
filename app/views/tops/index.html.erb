@@ -1,0 +1,62 @@
+<%# Header %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("logo.png", class:"furima-icon"), "/" %>
+    <li><%= link_to 'ログイン', root_path, class: "login" %></li>
+  </div>
+</header>
+
+<%# Top %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      クレンリネンス共有タスクアプリ
+    </h2>
+    <p class='service-explain'>
+    【清潔で快適な状態】をチームで共有するための、タスク化が簡易的になるアプリです。
+    </p>
+    <li><%= link_to '新規登録して始める', root_path, class: "btn btn-primary" %></li>
+  </div>
+
+<%# 詳細 %>
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      Cleanliness_meの特徴
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "test.jpeg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>写真</span>
+          をつけて投稿
+        </h3>
+        <p class='reason-list-description'>
+          *********
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "test.jpeg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>詳細</span>
+          表示でわかりやすく
+        </h3>
+        <p class='reason-list-description'>
+          ***********
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "test.jpeg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          完了後
+          <span class='reason-list-blue-text'>終了機能</span>
+        </h3>
+        <p class='reason-list-description'>
+          **********
+        </p>
+      </li>
+    </ul>
+  </div>
+
+<%# Footer %>
+<div class='footer'>
+<p>© Cleanliness_me</p>
+</div>
