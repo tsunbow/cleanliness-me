@@ -1,0 +1,19 @@
+.ad-footer-contents {
+  width: 100vw;
+  background-image: image-url('clean_main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+  width: 20vh;
+  vertical-align: bottom;
+}
