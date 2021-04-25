@@ -1,5 +1,6 @@
 class CleansController < ApplicationController
   def index
+    @cleans = Clean.order("created_at DESC")
   end
 
   def new
@@ -8,6 +9,11 @@ class CleansController < ApplicationController
 
   def create
     @clean = Clean.new(clean_params)
+    if @clean.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 
