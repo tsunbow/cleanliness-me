@@ -1,0 +1,80 @@
+<%= render "shared/second-header" %>
+
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">清掃内容の情報を入力</h2>
+    <%= form_with(model: @clean, url: clean_path, local: true) do |f| %>
+
+    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%= render 'shared/error_messages', model: f.object %>
+    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        清掃場所画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"clean-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        清掃タスク名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :clean_name, class:"items-text", id:"clean-name", placeholder:"タスク名を入力", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          タスクの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"items-text", id:"clean-info", placeholder:"説明（タスクについての説明。どう言った状態なのか、細かな情報、注意点など）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">タスクの詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          清掃場所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :cleaning_place, class:"items-text", id:"cleaning-pleace", placeholder:"場所を入力", maxlength:"40" %>
+        <div class="weight-bold-text">
+          清掃箇所の状態
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"clean-status"}) %>
+                <div class="weight-bold-text">
+          業者対応の有無
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:support_id, Support.all, :id, :name, {}, {class:"select-box", id:"clean-support"}) %>
+        <div class="weight-bold-text">
+          重要度
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:important_id, Important.all, :id, :name, {}, {class:"select-box", id:"clean-important"}) %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>
+ <%= render "shared/footer"%>
