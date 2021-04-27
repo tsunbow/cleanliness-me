@@ -25,6 +25,7 @@ class CleansController < ApplicationController
   end
 
   def edit
+    @clean = Clean.find(params[:id])
   end
 
 
