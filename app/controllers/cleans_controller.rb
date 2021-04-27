@@ -11,7 +11,7 @@ class CleansController < ApplicationController
   def create
     @clean = Clean.new(clean_params)
     if @clean.save
-      redirect_to root_path
+      redirect_to cleans_index_path
     else
       render :new
     end
