@@ -1,4 +1,5 @@
 class CleansController < ApplicationController
+
   def index
     @cleans = Clean.order("created_at DESC")
   end
@@ -14,6 +15,10 @@ class CleansController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @clean = Clean.find(params[:id])
   end
 
 
