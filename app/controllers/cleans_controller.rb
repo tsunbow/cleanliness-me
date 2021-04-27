@@ -34,6 +34,12 @@ class CleansController < ApplicationController
     @clean = Clean.find(params[:id])
   end
 
+  def destroy
+    clean = Clean.find(params[:id])
+    clean.destroy
+    redirect_to cleans_index_path
+  end
+
 
   private
 
