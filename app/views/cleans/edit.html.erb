@@ -1,3 +1,5 @@
+<%# cssは商品出品のものを併用しています。
+app/assets/stylesheets/items/new.css %>
 <%= render "shared/second-header" %>
 
 <div class="items-sell-contents">
@@ -19,7 +21,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"clean-image" %>
+        <%= f.file_field :hoge, id:"item-image" %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -40,7 +42,7 @@
     </div>
     <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
+        <%# 商品の詳細 %>
     <div class="items-detail">
       <div class="weight-bold-text">タスクの詳細</div>
       <div class="form">
@@ -70,11 +72,13 @@
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', "#", class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
   <% end %>
+
+
 </div>
- <%= render "shared/footer"%>
+<%= render "shared/footer"%>
