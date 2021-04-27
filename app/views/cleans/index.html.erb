@@ -9,7 +9,7 @@
       <% @cleans.each do |clean|%>
       <li class='list'>
         <div class='item-img-content'>
-          <%= link_to image_tag(clean.image, class: "item-img") %>
+          <%= link_to image_tag(clean.image, class: "item-img"), clean_path(clean) %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <div class='sold-out'>
