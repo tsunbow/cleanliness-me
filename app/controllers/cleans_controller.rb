@@ -22,6 +22,12 @@ class CleansController < ApplicationController
   end
 
   def update
+    @clean = Clean.find(params[:id])
+    if @clean.update(clean_params)
+      redirect_to clean_path
+    else
+      render :edit
+    end
   end
 
   def edit
