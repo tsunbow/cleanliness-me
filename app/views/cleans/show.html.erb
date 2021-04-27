@@ -27,7 +27,7 @@
 
     <%= link_to "投稿の編集", edit_clean_path, method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "投稿を削除", "#", method: :delete, class:"item-destroy" %>
+    <%= link_to "投稿を削除", clean_path(@clean.id), method: :delete, class:"item-destroy" %>
 
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <%= link_to "タスク完了報告", "#" ,class:"item-red-btn"%>
