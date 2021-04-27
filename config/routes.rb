@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   # end
 
 
-  resource :clean, only: [:new, :create]
+  resource :clean, only: [:index, :new, :create]
 end
