@@ -41,3 +41,30 @@
 
 - belongs_to :user
 - belongs_to :clean
+
+## executions テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| complete_time    | datetime   | null: false                    |
+| complete_content | string     | null: false                    |
+| takeover         | string     | null: false                    |
+| note             | text       | null: false                    |
+| complete         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :complete
+
+## completes テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| clean        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :clean
+- has_one :executions

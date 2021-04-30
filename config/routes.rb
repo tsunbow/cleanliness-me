@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get 'tops/index'
   root to: 'tops#index'
 
-  resources :cleans
+  resources :cleans do
+    resources :tasks, only: [:index, :create]
+  end
 end
