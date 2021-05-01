@@ -7,7 +7,7 @@ class CreateCleans < ActiveRecord::Migration[6.0]
       t.integer    :status_id,          null: false
       t.integer    :support_id,         null: false
       t.integer    :important_id,       null: false
-      t.references :complete,  null: false, foreign_key: true
+      t.references :user,  null: false, foreign_key: true
       t.timestamps
     end
   end

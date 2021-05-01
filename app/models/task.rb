@@ -1,17 +1,22 @@
 class Task
 
-  include ActiveModel::Module
-  attr_accessor :user_id, :complete_id, :clean_id, :complete_time, :complete_content, :takeover, :note
+  include ActiveModel::Model
+  attr_accessor :user_id, :run_id, :clean_id, :run_time, :run_content, :takeover, :note
 
   with_options presence: true do
-    validates :complete_time
-    validates :complete_content
+    validates :image
+    validates :run_time
+    validates :run_content
     validates :takeover
+    validates :user_id
+    validates :clean_id
   end
+
+  has_one_attached :image
 
   def save
     complete = Complete.create(user_id: user_id, clean_id: clean_id)
-    Execution.create(complete_time: complete_time, complete_content: complete_content, takeover: takeover, complete_id: complete.id)
+    Execution.create(run_time: run_time, run_content: run_content, takeover: takeover, done_id: done.id)
   end
 
 end

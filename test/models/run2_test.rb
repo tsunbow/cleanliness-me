@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ExecutionTest < ActiveSupport::TestCase
+class Run2Test < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

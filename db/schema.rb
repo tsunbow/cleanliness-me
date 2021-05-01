@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_153101) do
+ActiveRecord::Schema.define(version: 2021_05_01_195721) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,26 @@ ActiveRecord::Schema.define(version: 2021_04_23_153101) do
     t.index ["user_id"], name: "index_cleans_on_user_id"
   end
 
+  create_table "dones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "clean_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["clean_id"], name: "index_dones_on_clean_id"
+    t.index ["user_id"], name: "index_dones_on_user_id"
+  end
+
+  create_table "run2s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "run_time", null: false
+    t.string "run_content", null: false
+    t.string "takeover", null: false
+    t.text "note"
+    t.bigint "done_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["done_id"], name: "index_run2s_on_done_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -61,4 +81,7 @@ ActiveRecord::Schema.define(version: 2021_04_23_153101) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cleans", "users"
+  add_foreign_key "dones", "cleans"
+  add_foreign_key "dones", "users"
+  add_foreign_key "run2s", "dones"
 end

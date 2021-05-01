@@ -11,7 +11,7 @@
 ### Association
 
 - has_many :cleans
-- has_many :completes
+- has_many :dones
 
 ## cleans テーブル
 
@@ -28,7 +28,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :complete
+- has_one :done
 
 ## completes テーブル
 
@@ -42,21 +42,21 @@
 - belongs_to :user
 - belongs_to :clean
 
-## executions テーブル
+## runs テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| complete_time    | datetime   | null: false                    |
-| complete_content | string     | null: false                    |
+| run_time    | datetime   | null: false                    |
+| run_content | string     | null: false                    |
 | takeover         | string     | null: false                    |
 | note             | text       | null: false                    |
 | complete         | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :complete
+- belongs_to :done
 
-## completes テーブル
+## dones テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -67,4 +67,4 @@
 
 - belongs_to :user
 - belongs_to :clean
-- has_one :executions
+- has_one :run
