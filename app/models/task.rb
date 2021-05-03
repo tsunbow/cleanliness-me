@@ -12,11 +12,10 @@ class Task
     validates :clean_id
   end
 
-  has_one_attached :image
 
   def save
-    complete = Complete.create(user_id: user_id, clean_id: clean_id)
-    Execution.create(run_time: run_time, run_content: run_content, takeover: takeover, done_id: done.id)
+    done = Done.create(user_id: user_id, clean_id: clean_id)
+    Run2.create(run_time: run_time, run_content: run_content, takeover: takeover, note: note, done_id: done.id)
   end
 
 end
