@@ -21,6 +21,10 @@ class CleansController < ApplicationController
     @clean = Clean.find(params[:id])
   end
 
+  def edit
+    @clean = Clean.find(params[:id])
+  end
+
   def update
     @clean = Clean.find(params[:id])
     if @clean.update(clean_params)
@@ -30,9 +34,7 @@ class CleansController < ApplicationController
     end
   end
 
-  def edit
-    @clean = Clean.find(params[:id])
-  end
+
 
   def destroy
     clean = Clean.find(params[:id])
