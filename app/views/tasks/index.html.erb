@@ -1,0 +1,75 @@
+<div class='transaction-contents'>
+  <div class='transaction-main'>
+    <h1 class='transaction-title-text'>
+      タスク内容の確認
+    </h1>
+    <%# 購入内容の表示 %>
+    <div class='buy-item-info'>
+      <%= image_tag @clean.image, class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= @clean.clean_name %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-text'><%= @clean.cleaning_place %></p>
+          <p class='item-price-sub-text'><%= @clean.status.name %></p>
+        </div>
+      </div>
+    </div>
+    <%# /購入内容の表示 %>
+
+    <%= form_with(model: @task, url: clean_tasks_path, id: 'charge-form', local: true) do |f| %>
+
+        <div class="img-upload">
+      <div class="weight-bold-text">
+        完了場所画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"task-image" %>
+      </div>
+    </div>
+    
+    <%# 完了報告の入力 %>
+    <div class='shipping-address-form'>
+      <h1 class='info-input-haedline'>
+        完了報告
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">完了日時</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_field :run_time, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">改善内容</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :run_content, class:"select-box", id:"prefecture" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">引継ぎ内容</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :takeover, class:"item-text", id:"city", placeholder:"例）横浜市緑区"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">備考欄</label>
+        </div>
+        <%= f.text_area :note, class:"item-text", id:"city", placeholder:"例）横浜市緑区"%>
+      </div>
+    </div>
+    <%# /完了報告の入力 %>
+    <div class='buy-btn'>
+      <%= f.submit "完了" ,class:"buy-red-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
