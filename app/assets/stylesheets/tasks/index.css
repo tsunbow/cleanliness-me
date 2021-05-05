@@ -128,8 +128,8 @@
 /* /カード情報の入力 */
 
 /* 配送先の入力 */
-.shipping-address-form {
-  margin-top: 15px;
+.done-form {
+  margin-top: 20px;
 }
 
 .form-any {
@@ -140,13 +140,14 @@
   padding: 2px 4px;
 }
 
-.buy-btn {
+.complete-btn {
   width: 50%;
   margin: 0 auto;
+  text-align: center;
   margin-top: 50px;
 }
 
-.buy-red-btn {
+.complete-red-btn {
   width: 100%;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -154,4 +155,6 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  margin-bottom: 4vh;
+  border-radius:30px;
 }
