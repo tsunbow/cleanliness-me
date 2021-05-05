@@ -58,6 +58,7 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius:30px;
 }
 
 .or-text {
@@ -71,6 +72,7 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius:30px;
 }
 
 .item-explain-box {
@@ -107,6 +109,7 @@
 
 .favorite-btn {
   border-radius: 40px;
+  height: 5vh;
   width: 15vw;
   min-width: 200px;
   color: rgb(249, 75, 0);
@@ -115,28 +118,13 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  margin-top: 20px;
 }
 
 .favorite-star-icon {
   margin-right: 5px;
 }
 
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
-}
 
 
 /* /商品の概要 */
@@ -156,12 +144,6 @@
   resize: none;
 }
 
-.comment-warn {
-  padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
-  text-align: left;
-}
 
 .comment-btn {
   line-height: 48px;
@@ -184,7 +166,7 @@
   margin: 10px 5px 0 0;
 }
 
-.another-item {
+.top-move {
   display: block;
   margin: 30px 0px 8px;
   color: #3CCACE;

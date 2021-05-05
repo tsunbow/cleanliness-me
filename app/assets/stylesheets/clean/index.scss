@@ -6,12 +6,14 @@
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
+  
 }
 
 .item-contents>.title {
-  font-size: 5vh;
+  font-size: 3vh;
   line-height: 1.4;
   font-weight: bold;
+  margin-left: 40px;
 }
 
 .item-contents>.subtitle {
@@ -27,6 +29,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
+  
   
 }
 
@@ -42,22 +46,23 @@
 }
 
 .item-img {
-  width: 33vh;
-  height: 33vh;
+  width: 32.5vh;
+  height: 32.5vh;
 }
 
-.sold-out {
+.complete {
   position: absolute;
   top: 40%;
   width: 100%;
   text-align: center;
   background-color: crimson;
-  transform: skewY(-10deg);
+  
+ 
 }
 
-.sold-out>span {
+.complete>span {
   color: #FFF;
-  font-size: 45px;
+  font-size: 30px;
   font: bold;
 }
 

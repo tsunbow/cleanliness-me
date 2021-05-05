@@ -1,3 +1,5 @@
+<%= render "shared/second-header" %>
+
 <div class='transaction-contents'>
   <div class='transaction-main'>
     <h1 class='transaction-title-text'>
@@ -34,7 +36,7 @@
     </div>
     
     <%# 完了報告の入力 %>
-    <div class='shipping-address-form'>
+    <div class='done-form'>
       <h1 class='info-input-haedline'>
         完了報告
       </h1>
@@ -43,33 +45,36 @@
           <label class="form-text">完了日時</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.date_field :run_time, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        <%= f.date_field :run_time, class:"input-default", id:"run-time" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">改善内容</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :run_content, class:"select-box", id:"prefecture" %>
+        <%= f.text_area :run_content, class:"item-text", id:"run-content" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">引継ぎ内容</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :takeover, class:"item-text", id:"city", placeholder:"例）横浜市緑区"%>
+        <%= f.text_area :takeover, class:"item-text", id:"takeover" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">備考欄</label>
         </div>
-        <%= f.text_area :note, class:"item-text", id:"city", placeholder:"例）横浜市緑区"%>
+        <%= f.text_area :note, class:"item-text", id:"note" %>
       </div>
     </div>
     <%# /完了報告の入力 %>
-    <div class='buy-btn'>
-      <%= f.submit "完了" ,class:"buy-red-btn" %>
+    <div class='complete-btn'>
+      <%= f.submit "完了" ,class:"complete-red-btn" %>
+      <%= link_to '戻る', 'javascript:history.back()', class:"back-btn" %>
     </div>
     <% end %>
   </div>
 </div>
+
+ <%= render "shared/footer"%>
