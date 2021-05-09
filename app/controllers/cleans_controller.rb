@@ -36,8 +36,12 @@ class CleansController < ApplicationController
 
   def destroy
     clean = Clean.find(params[:id])
-    clean.destroy
-    redirect_to cleans_index_path
+    if clean.destroy
+      redirect_to cleans_index_path
+    else
+      redirect_to edit_clean_path
+    end
+    redirect_to root_path unless current_user == clean.user
   end
 
   private
