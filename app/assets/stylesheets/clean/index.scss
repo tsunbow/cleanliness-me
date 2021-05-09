@@ -51,13 +51,15 @@
 }
 
 .complete {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  
- 
+  width: 250px;
+  height: 90px;
+  display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 70px;
+    -webkit-transform: rotate(-10deg);
 }
 
 .complete>span {
@@ -100,3 +102,5 @@
 }
 
 /* //商品一覧 */
+
+

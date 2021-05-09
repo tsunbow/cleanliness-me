@@ -1,4 +1,7 @@
 class CleansController < ApplicationController
+  before_action :set_clean, only: [:show, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :redirect_root, only: [:edit, :update]
 
   def index
     @cleans = Clean.order("created_at DESC")
@@ -18,15 +21,12 @@ class CleansController < ApplicationController
   end
 
   def show
-    @clean = Clean.find(params[:id])
   end
 
   def edit
-    @clean = Clean.find(params[:id])
   end
 
   def update
-    @clean = Clean.find(params[:id])
     if @clean.update(clean_params)
       redirect_to clean_path
     else
@@ -34,19 +34,24 @@ class CleansController < ApplicationController
     end
   end
 
-
-
   def destroy
     clean = Clean.find(params[:id])
     clean.destroy
     redirect_to cleans_index_path
   end
 
-
   private
 
   def clean_params
     params.require(:clean).permit(:image, :clean_name, :text, :cleaning_place, :status_id, :support_id, :important_id).merge(user_id: current_user.id)
+  end
+
+  def set_clean
+    @clean = Clean.find(params[:id])
+  end
+
+  def redirect_root
+    redirect_to root_path unless current_user == @clean.user
   end
 
 end
