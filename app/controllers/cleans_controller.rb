@@ -1,7 +1,7 @@
 class CleansController < ApplicationController
 
   def index
-    @cleans = Clean.all
+    @cleans = Clean.order("created_at DESC")
   end
 
   def new

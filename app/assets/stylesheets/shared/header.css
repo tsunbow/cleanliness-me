@@ -107,3 +107,10 @@
   text-decoration: none;
   color: #333333;
 }
+
+.newpost {
+  font-size: 25px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}

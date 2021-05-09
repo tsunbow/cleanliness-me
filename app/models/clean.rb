@@ -15,6 +15,7 @@ class Clean < ApplicationRecord
   belongs_to :user
   has_one :done
   has_one_attached :image
+  has_one :run2
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :status

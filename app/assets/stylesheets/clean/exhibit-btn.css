@@ -1,23 +1,4 @@
-.purchase-btn {
+.new-post {
   width: 150px;
-  background: #b2f0ff;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-}
 
-.purchase-btn-text {
-  color: #4b4b4b;
-  display: block;
-  font-size: 30px;
-  text-decoration: none;
-  margin-bottom: 5px;
-}
-
-.purchase-btn-icon {
-  width: 100%;
-  height: 1000%;
 }

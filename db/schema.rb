@@ -55,14 +55,6 @@ ActiveRecord::Schema.define(version: 2021_05_01_195721) do
     t.index ["user_id"], name: "index_dones_on_user_id"
   end
 
-  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
   create_table "run2s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "run_time", null: false
     t.string "run_content", null: false
@@ -91,6 +83,5 @@ ActiveRecord::Schema.define(version: 2021_05_01_195721) do
   add_foreign_key "cleans", "users"
   add_foreign_key "dones", "cleans"
   add_foreign_key "dones", "users"
-  add_foreign_key "posts", "users"
   add_foreign_key "run2s", "dones"
 end

@@ -3,17 +3,16 @@
   <div class='item-contents'>
     <h2 class='title'>タスク投稿一覧</h2>
     <ul class='item-lists'>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @cleans.each do |clean|%>
       <li class='list'>
         <div class='item-img-content'>
           <%= link_to image_tag(clean.image, class: "item-img"), clean_path(clean) %>
 
-          <%# 商品が売れていればsold outを表示しましょう %>
+          <% if clean.done.present? %>
           <div class='complete'>
             <span>完了</span>
           </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
+          <% end %>
 
         </div>
         <div class='item-info'>
@@ -30,12 +29,25 @@
         </div>
       </li>
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <%# //投稿がない場合、サンプル投稿を表示%>
+       <li class='list'>
+        <% if @cleans.length == 0 %>
+        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            サンプル投稿
+          </h3>
+          <div class='item-price'>
+            <span>タスク完了で完了表示されます</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //投稿がない場合、サンプル投稿を表示%>
     </ul>
   </div>
-  <%= link_to(new_clean_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>新規投稿</span>
-  <%= image_tag 'icon_clean.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  <% end %>
-
   <%= render "shared/footer"%>
