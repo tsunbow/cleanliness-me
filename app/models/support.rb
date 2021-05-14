@@ -7,5 +7,4 @@ class Support < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :cleans
-
 end

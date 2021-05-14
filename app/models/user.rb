@@ -7,5 +7,4 @@ class User < ApplicationRecord
 
   has_many :cleans
   has_many :dones
-
 end

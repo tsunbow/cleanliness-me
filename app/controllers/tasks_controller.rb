@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   def index
     @task = Task.new
   end
- 
+
   def create
     @task = Task.new(task_params)
     if @task.save
@@ -19,8 +19,8 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:image2, :run_time, :run_content, :takeover, :note).merge(user_id: current_user.id, clean_id: params[:clean_id])
-
+    params.require(:task).permit(:image2, :run_time, :run_content, :takeover, :note).merge(user_id: current_user.id,
+                                                                                           clean_id: params[:clean_id])
   end
 
   def set_task
@@ -28,11 +28,10 @@ class TasksController < ApplicationController
   end
 
   def set_user
-    if current_user.id == @clean.user_id 
-       redirect_to root_path
-     elsif @clean.purchase.present?
-        redirect_to root_path
-      end
-   end
-
+    if current_user.id == @clean.user_id
+      redirect_to root_path
+    elsif @clean.purchase.present?
+      redirect_to root_path
+    end
+  end
 end

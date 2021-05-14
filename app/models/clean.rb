@@ -21,5 +21,4 @@ class Clean < ApplicationRecord
   belongs_to_active_hash :status
   belongs_to_active_hash :support
   belongs_to_active_hash :important
-
 end

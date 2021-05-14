@@ -4,7 +4,7 @@ class CleansController < ApplicationController
   before_action :redirect_root, only: [:edit, :update]
 
   def index
-    @cleans = Clean.order("created_at DESC")
+    @cleans = Clean.order('created_at DESC')
   end
 
   def new
@@ -47,7 +47,8 @@ class CleansController < ApplicationController
   private
 
   def clean_params
-    params.require(:clean).permit(:image, :clean_name, :text, :cleaning_place, :status_id, :support_id, :important_id).merge(user_id: current_user.id)
+    params.require(:clean).permit(:image, :clean_name, :text, :cleaning_place, :status_id, :support_id,
+                                  :important_id).merge(user_id: current_user.id)
   end
 
   def set_clean
@@ -57,5 +58,4 @@ class CleansController < ApplicationController
   def redirect_root
     redirect_to root_path unless current_user == @clean.user
   end
-
 end
