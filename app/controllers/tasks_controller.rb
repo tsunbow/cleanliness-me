@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:index, :create]
   before_action :authenticate_user!, only: [:index, :create]
-  before_action :set_user, only: [:index, :create]
 
   def index
     @task = Task.new
@@ -27,11 +26,4 @@ class TasksController < ApplicationController
     @clean = Clean.find(params[:clean_id])
   end
 
-  def set_user
-    if current_user.id == @clean.user_id
-      redirect_to root_path
-    elsif @clean.purchase.present?
-      redirect_to root_path
-    end
-  end
 end
