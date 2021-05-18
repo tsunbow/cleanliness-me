@@ -29,7 +29,7 @@
     <% unless @clean.done.present? %>
     <%= link_to "タスク投稿の編集", edit_clean_path, method: :get, class: "item-red-btn" %>
     <%= link_to "タスク完了の報告", clean_tasks_path(@clean.id), class:"item-red-btn"%>
-    <%= link_to "投稿を削除", clean_path(@clean.id), method: :delete, class:"item-destroy" %>
+    <%= link_to "投稿を削除", clean_path(@clean.id), method: :delete, data: {confirm: "削除しますか？"}, class:"item-destroy" %>
     <% end %>
 
     <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
