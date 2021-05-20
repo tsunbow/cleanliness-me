@@ -21,20 +21,7 @@
     <%# /購入内容の表示 %>
 
     <%= form_with(model: @task, url: clean_tasks_path, id: 'charge-form', local: true) do |f| %>
-
-        <div class="img-upload">
-      <div class="weight-bold-text">
-        完了場所画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"task-image" %>
-      </div>
-    </div>
-    
+    <%= render 'shared/error_messages', model: f.object %>
     <%# 完了報告の入力 %>
     <div class='done-form'>
       <h1 class='info-input-haedline'>

@@ -3,7 +3,6 @@ class Task
   attr_accessor :user_id, :run_id, :clean_id, :run_time, :run_content, :takeover, :note
 
   with_options presence: true do
-    validates :image
     validates :run_time
     validates :run_content
     validates :takeover
