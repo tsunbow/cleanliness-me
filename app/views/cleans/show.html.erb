@@ -59,18 +59,9 @@
           <th class="detail-item">重要度</th>
           <td class="detail-value"><%= @clean.important.name %></td>
         </tr>
-        <tr>
-          <th class="detail-item">投稿時間</th>
-          <td class="detail-value"><%= "********" %></td>
-        </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png",class:"favorite-star-icon",width:"20",height:"20"%>
-        <span>確認 0</span>
-      </div>
-    </div>
+
   </div>
   <%# /商品の概要 %>
 
@@ -78,12 +69,12 @@
 
   <div class="comment-box">
     <%= form_with(model:[@clean, @message], local: true) do |f|%>
-    <%= f.text_area :text, placeholder: "引継ぎ等を入力", rows: "2", class: "comment-text" %>
+    <%= f.text_area :text, placeholder: "ここにコメントを入力", rows: "2", class: "comment-text" %>
       <%= f.submit "コメントする", class: "comment-btn" %>
       <% end %>
   </div>
   <div class="messages">
-    <h4>＜コメント一覧＞</h4>
+    <h2>＜コメント一覧＞</h2>
      <% @messages.reverse_each do |message| %>
       <p><%= message.text %></p>
       <% end %>

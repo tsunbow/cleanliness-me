@@ -4,7 +4,6 @@
      <%= link_to image_tag("logo.png", class:"furima-icon"), cleans_index_path %>
       <ul class='lists-right'>
         <li><%= link_to '新規タスク投稿', new_clean_path, class: "newpost" %></li>
-        <li><%= link_to 'Mypage', "#", class: "mypage" %></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "logout" %></li>
       </ul>
    </div>

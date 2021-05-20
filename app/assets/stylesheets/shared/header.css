@@ -93,14 +93,7 @@
 .logout {
   text-decoration: none;
   color: #333333;
-}
-
-.login {
-  font-size: 20px;
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
+  margin-left: 3vw;
 }
 
 .mypage {
