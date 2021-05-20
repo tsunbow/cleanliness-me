@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   has_many :cleans
   has_many :dones
+  has_one :message
 end

@@ -21,6 +21,8 @@ class CleansController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @messages = @clean.messages.includes(:user)
   end
 
   def edit

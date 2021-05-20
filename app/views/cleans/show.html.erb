@@ -77,13 +77,16 @@
 
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png",class:"comment-flag-icon",width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+    <%= form_with(model:[@clean, @message], local: true) do |f|%>
+    <%= f.text_area :text, placeholder: "引継ぎ等を入力", rows: "2", class: "comment-text" %>
+      <%= f.submit "コメントする", class: "comment-btn" %>
+      <% end %>
+  </div>
+  <div class="messages">
+    <h4>＜コメント一覧＞</h4>
+     <% @messages.reverse_each do |message| %>
+      <p><%= message.text %></p>
+      <% end %>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
   <%= link_to 'TOPに戻る', cleans_index_path, class: "top-move" %>
