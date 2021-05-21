@@ -65,19 +65,17 @@
   </div>
   <%# /商品の概要 %>
 
-
-
   <div class="comment-box">
     <%= form_with(model:[@clean, @message], local: true) do |f|%>
     <%= f.text_area :text, placeholder: "ここにコメントを入力", rows: "2", class: "comment-text" %>
       <%= f.submit "コメントする", class: "comment-btn" %>
       <% end %>
   </div>
-  <div class="messages">
-    <h2>＜コメント一覧＞</h2>
-     <% @messages.reverse_each do |message| %>
+  <h2>＜コメント一覧＞</h2>
+  <div id='messages'>
+    <% @messages.reverse_each do |message| %>
       <p><%= message.text %></p>
-      <% end %>
+    <% end %>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
   <%= link_to 'TOPに戻る', cleans_index_path, class: "top-move" %>

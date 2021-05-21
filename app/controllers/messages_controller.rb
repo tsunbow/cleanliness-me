@@ -2,11 +2,8 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
-    if @message.valid?
-      @message.save
+    if  @message.save
       ActionCable.server.broadcast "message_channel", message: @message
-    else
-      redirect_to clean_path(@message.clean)
     end
   end
 
