@@ -5,8 +5,6 @@ class CleansController < ApplicationController
 
   def index
     @cleans = Clean.order('created_at DESC')
-    @q = Clean.search(params[:q])
-    @cleans = @q.result(distinct: true)
   end
 
   def new
