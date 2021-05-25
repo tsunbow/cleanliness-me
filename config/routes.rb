@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root to: 'tops#index'
 
   resources :cleans do
-    resources :messages, only: [:create]
-    resources :tasks, only: [:index, :create]
+      resources :messages, only: [:create]
+      resources :tasks, only: [:index, :create]
+    end
   end
 end

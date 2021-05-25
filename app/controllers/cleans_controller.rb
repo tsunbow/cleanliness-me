@@ -5,6 +5,8 @@ class CleansController < ApplicationController
 
   def index
     @cleans = Clean.order('created_at DESC')
+    @q = Clean.search(params[:q])
+    @cleans = @q.result(distinct: true)
   end
 
   def new
@@ -60,4 +62,5 @@ class CleansController < ApplicationController
   def redirect_root
     redirect_to root_path unless current_user == @clean.user
   end
+
 end
