@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.furima-icon {
+.clean-icon {
   height: 10vh;
   width: 20vw;
   margin-right: 10vw;
@@ -79,6 +79,7 @@
   display: flex;
   list-style: none;
   align-items: flex-end;
+  margin: 0 0 0 auto;
 }
 
 
