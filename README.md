@@ -1,70 +1,64 @@
-# テーブル設計
+### アプリケーション名
+Cleanliness_me
 
-## users テーブル
+### アプリケーション概要	
+クリンリネンスを維持できる清掃タスク管理アプリです。
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| name               | string | null: false               |
-| email              | string | null: false  unique: true |
-| encrypted_password | string | null: false               |
+### 使用技術
+・Ruby
+・Ruby on Rails
+・MySQL
+・Nginx
+・Puma
+・AWS
+　○EC2
+　○S3
+・Capistrano
+・RSpec
 
-### Association
+###  アプリケーション機能一覧
+記事一覧表示機能
+記事詳細表示機能
+記事投稿機能
+管理ユーザー登録、ログイン機能(devise)
+画像ファイルのアップロード機能(AWS S3)
+認証機能(Basic認証)
+コメント機能(ActionCable)
 
-- has_many :cleans
-- has_many :dones
+### URL	
+http://35.73.231.80
 
-## cleans テーブル
+### テスト用アカウント	
+■Basic認証
+ID    : admin
+PASS  : 32881
+■テスト用アカウント
+ID    :1234@gmail.com
+PASS  :k111111
 
-| Column             | Type         | Options                        |
-| ------------------ | ------------ | ------------------------------ |
-| clean_name         | string       | null: false                    |
-| text               | text         | null: false                    |
-| cleaning_place     | string       | null: false                    |
-| status_id          | integer      | null: false                    |
-| support_id         | integer      | null: false                    |
-| important_id       | integer      | null: false                    |
-| user               | references   | null: false, foreign_key: true |
+### 利用方法	
+TOPページの中ボタンより会員登録を行い、アプリケーション画面へ遷移。
+上部新規タスク投稿をクリック、画面に沿って登録をすることで、タスクを作成できます。
+投稿後は画面に一覧で表示され、クリックすると詳細ページに遷移されます。
+詳細ページでは、編集、タスクの削除、タスクの完了を行えます。
+タスク完了後は一覧ページに完了アイコンが表示され、未完了タスクと見分け安くなっております。
 
-### Association
+### 目指した課題解決	
+現ホテル職での、館内のキープクリーン維持作業を行う上で、清掃や修繕が必要な場所を表計算ソフトや、チャットアプリで行っており、
+状態の管理や重要な案件、実行済みの確認などが安易ではなく、アナログ状態だったため、
+アプリ開発を行い、この問題点を解決させたく考えたため作成に至りました。
 
-- belongs_to :user
-- has_one :done
+### 洗い出した要件	
+スプレッドシートにまとめた要件定義を記述。
 
-## completes テーブル
+### 実装した機能についての画像やGIFおよびその説明	
+実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| user         | references | null: false, foreign_key: true |
-| clean        | references | null: false, foreign_key: true |
+### 実装予定の機能	
+洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。
 
-### Association
+### データベース設計	
+ER図等を添付。
 
-- belongs_to :user
-- belongs_to :clean
-
-## runs テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| run_time    | datetime   | null: false                    |
-| run_content | string     | null: false                    |
-| takeover         | string     | null: false                    |
-| note             | text       | null: false                    |
-| complete         | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :done
-
-## dones テーブル
-
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| user         | references | null: false, foreign_key: true |
-| clean        | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :clean
-- has_one :run
+### ローカルでの動作方法	
+git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述。この時、アプリケーション開発に使用した環境を併記することを忘れないこと（パッケージやRubyのバージョンなど）。
