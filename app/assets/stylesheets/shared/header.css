@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 
-.search-bar-contents {
+.top-bar-contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
